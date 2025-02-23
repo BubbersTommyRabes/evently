@@ -21,7 +21,11 @@ def setup_database():
   try:
     with engine.connect() as connection:
       print("Connection successful!")
+      Base.metadata.drop_all(engine)
       Base.metadata.create_all(engine)
+      print("All tables have been recreated")
+      feed()
+      print("Fill the tables with data")
   except Exception as e:
     print(f"Failed to connect: {e}")
   
@@ -29,3 +33,13 @@ def get_session():
   with Session(engine) as session:
     yield session
     session.close()
+    
+def feed():
+  with Session(engine) as session:
+    try:
+      from mock_data import mock_events
+      data = mock_events
+      session.add_all(data)
+      session.commit()
+    finally:
+      session.close()
