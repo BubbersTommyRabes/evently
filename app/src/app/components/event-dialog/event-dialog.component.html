@@ -1,0 +1,22 @@
+<div class="dialog-content">
+  <div class="p-field">
+    <label for="title">Title</label>
+    <input pInputText id="title" [(ngModel)]="event.name" placeholder="Event Title" />
+  </div>
+  <div class="p-field">
+    <label for="start">Start</label>
+    <p-calendar id="start" [(ngModel)]="event.startDate" [showTime]="true" dateFormat="mm/dd/yy" />
+  </div>
+  <div class="p-field">
+    <label for="end">End</label>
+    <p-calendar id="end" [(ngModel)]="event.endDate" [showTime]="true" dateFormat="mm/dd/yy" />
+  </div>
+  <div class="p-field">
+    <label for="description">Description</label>
+    <textarea pInputTextarea id="description" [(ngModel)]="event.description" placeholder="Optional description"></textarea>
+  </div>
+  <div class="p-dialog-footer">
+    <button pButton label="Cancel" class="p-button-secondary" (click)="cancel()">Cancel</button>
+    <button pButton label="Save" (click)="save()" [disabled]="!event.name || !event.startDate || !event.endDate">Save event</button>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 from routers import events, hosts
 
@@ -11,6 +12,4 @@ app = FastAPI()
 app.include_router(events.router, prefix="/api")
 app.include_router(hosts.router, prefix="/api")
 
-@app.get("/")
-def index():
-  return { "message": "Hello, World!" }
+app.mount("/", StaticFiles(directory="public/browser"), name="public")
