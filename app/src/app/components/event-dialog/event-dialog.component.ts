@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from '../../models/event';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { Calendar } from 'primeng/calendar';
+import { DatePickerModule } from 'primeng/datepicker';
+import { InputTextModule } from 'primeng/inputtext';
+import { TextareaModule } from 'primeng/textarea';
+import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-event-dialog',
-  imports: [FormsModule, Calendar],
+  imports: [FormsModule, InputTextModule, DatePickerModule, TextareaModule, ButtonModule],
   templateUrl: './event-dialog.component.html',
   styleUrl: './event-dialog.component.scss'
 })

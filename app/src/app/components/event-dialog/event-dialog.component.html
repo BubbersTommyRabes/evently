@@ -5,18 +5,18 @@
   </div>
   <div class="p-field">
     <label for="start">Start</label>
-    <p-calendar id="start" [(ngModel)]="event.startDate" [showTime]="true" dateFormat="mm/dd/yy" />
+    <p-datepicker id="start" [(ngModel)]="event.startDate" [showTime]="true" dateFormat="mm/dd/yy" />
   </div>
   <div class="p-field">
     <label for="end">End</label>
-    <p-calendar id="end" [(ngModel)]="event.endDate" [showTime]="true" dateFormat="mm/dd/yy" />
+    <p-datepicker id="end" [(ngModel)]="event.endDate" [showTime]="true" dateFormat="mm/dd/yy" />
   </div>
   <div class="p-field">
     <label for="description">Description</label>
-    <textarea pInputTextarea id="description" [(ngModel)]="event.description" placeholder="Optional description"></textarea>
+    <textarea pTextarea id="description" [(ngModel)]="event.description" placeholder="Optional description"></textarea>
   </div>
   <div class="p-dialog-footer">
-    <button pButton label="Cancel" class="p-button-secondary" (click)="cancel()">Cancel</button>
-    <button pButton label="Save" (click)="save()" [disabled]="!event.name || !event.startDate || !event.endDate">Save event</button>
+    <p-button label="Cancel" severity="secondary" (click)="cancel()" />
+    <p-button label="Save" severity="success" (click)="save()" [disabled]="!event.name || !event.startDate || !event.endDate" />
   </div>
 </div>
