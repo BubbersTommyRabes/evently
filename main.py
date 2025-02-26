@@ -12,4 +12,4 @@ app = FastAPI()
 app.include_router(events.router, prefix="/api")
 app.include_router(hosts.router, prefix="/api")
 
-app.mount("/", StaticFiles(directory="public/browser"), name="public")
+# app.mount("/", StaticFiles(directory="public/browser"), name="public")
