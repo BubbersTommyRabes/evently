@@ -1,6 +1,7 @@
 from datetime import datetime
-from typing import Any, Optional, Self
-from pydantic import BaseModel, ValidationError, model_validator
+from typing import Any, Optional
+from typing_extensions import Self
+from pydantic import BaseModel, model_validator
 
 class EventIn(BaseModel):
   name: str

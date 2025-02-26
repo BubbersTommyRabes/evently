@@ -1,4 +1,5 @@
-from typing import Any, Optional, Self
+from typing import Any, Optional
+from typing_extensions import Self
 from datetime import datetime
 from sqlalchemy import UUID
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
